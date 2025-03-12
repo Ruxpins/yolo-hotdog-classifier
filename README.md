@@ -4,7 +4,7 @@ A computer vision model that classifies images as either "hotdog" or "not hotdog
 
 ## Project Description
 
-This classifier uses a fine-tuned YOLOv8 model to determine whether an image contains a hotdog or not. The model achieves approximately 90.6% accuracy on the validation dataset and has a small footprint of only 3.0MB, making it suitable for various applications including mobile.
+This classifier uses a fine-tuned YOLOv8 model to determine whether an image contains a hotdog or not. The model achieves approximately 90.6% accuracy on the validation dataset and has a small footprint of only 3.0MB, making it suitable for Sony IMX500 onboard AI accelerator. 
 
 ## Features
 
@@ -118,7 +118,7 @@ The model can run on:
 
 ﻿# Hot Dog Classifier
 
-A YOLOv8-based image classifier that can distinguish between hot dogs and not hot dogs.
+A YOLOv8-based image classifier that can distinguish between hot dog and not hot dog.
 
 ## Project Overview
 
