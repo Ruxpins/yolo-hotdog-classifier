@@ -1,4 +1,5 @@
 # YOLO Hotdog Classifier
+***Claude wrote this read.me and did some of the work because I'm lazy. Feel free to let me know if you have issues***
 
 A computer vision model that classifies images as either "hotdog" or "not hotdog", inspired by the Silicon Valley TV show. This project uses YOLOv8 for image classification.
 
@@ -163,4 +164,5 @@ The model can run on:
 ## Acknowledgements
 
 - Ultralytics for the YOLO implementation
-- [Add any other acknowledgements here]
+- Claude wrote this read.me because I was too lazy. Please let me know if there are any errors. I was not able to find any beyond what I've already fixed. 
+- Original dataset came from https://www.kaggle.com/datasets/dansbecker/hot-dog-not-hot-dog
