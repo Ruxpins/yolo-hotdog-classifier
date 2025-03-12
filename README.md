@@ -13,7 +13,13 @@ This classifier uses a fine-tuned YOLOv8 model to determine whether an image con
 - Small model size (~3.0MB)
 - Simple training and inference pipeline
 
-## Dataset Structure
+## Dataset Information
+
+The dataset consists of:
+- Training dataset: 498 images (balanced between hotdogs and non-hotdogs)
+- Validation dataset: 100 images
+
+### Dataset Structure
 
 The dataset is organized as follows:
 
@@ -41,6 +47,34 @@ dataset/
 
 Each folder contains images of the respective class for training and validation.
 
+### Dataset Preparation
+
+The repository includes a `split_dataset.py` script that helps you prepare your dataset by:
+1. Splitting your dataset into training and validation sets
+2. Organizing images into the required folder structure
+3. Balancing classes if needed
+
+Usage:
+```
+python split_dataset.py --source your_images_folder --train_ratio 0.8
+```
+
+### Data Configuration
+
+The dataset configuration is specified in `data.yaml`:
+
+```yaml
+# Dataset paths
+path: ./dataset  # Root directory
+train: train/    # Training data relative to path
+val: val/        # Validation data relative to path
+
+# Classes
+names:
+  0: hotdog
+  1: not_hotdog
+```
+
 ## Installation and Setup
 
 ### Requirements
@@ -53,14 +87,29 @@ Each folder contains images of the respective class for training and validation.
 
 1. Clone this repository:
    ```
-   git clone https://github.com/yourusername/yolo-hotdog-classifier.git
+   git clone https://github.com/Ruxpins/yolo-hotdog-classifier.git
    cd yolo-hotdog-classifier
    ```
 
-2. Install the required packages:
+2. Install the required packages using requirements.txt:
    ```
-   pip install ultralytics torch torchvision
+   pip install -r requirements.txt
    ```
+
+## Project Structure
+
+```
+yolo_hotdog_classifier/
+├── data.yaml         # Dataset configuration
+├── train.py          # Training script
+├── predict.py        # Inference script
+├── split_dataset.py  # Dataset preparation tool
+├── requirements.txt  # Dependencies
+├── dataset/          # Dataset directory
+│   ├── train/        # Training images
+│   └── val/          # Validation images
+└── runs/             # Training results and weights
+```
 
 ## Usage
 
@@ -115,44 +164,3 @@ The model can run on:
 
 - Ultralytics for the YOLO implementation
 - [Add any other acknowledgements here]
-
-﻿# Hot Dog Classifier
-
-A YOLOv8-based image classifier that can distinguish between hot dogs and not hot dogs.
-
-## Project Overview
-
-This project uses YOLOv8's classification model to identify whether an image contains a hot dog or not. The model has been trained on a custom dataset of hot dog and non-hot dog images.
-
-## Model Performance
-
-- Training dataset: 498 images (balanced between hot dogs and non-hot dogs)
-- Validation dataset: 100 images
-- Accuracy: 100% on validation set
-- Inference speed: 1.6ms per image
-
-## Directory Structure
-
-`
-yolo_hotdog_classifier/
-├── data.yaml         # Dataset configuration
-├── train.py          # Training script
-├── dataset/          # Dataset directory
-│   ├── train/        # Training images
-│   └── val/          # Validation images
-└── runs/             # Training results and weights
-`
-
-## Usage
-
-1. Install requirements:
-   `ash
-   pip install ultralytics
-   `
-
-2. Train the model:
-   `ash
-   python train.py
-   `
-
-The trained model weights will be saved in the 'runs' directory.
