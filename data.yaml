@@ -1,0 +1,6 @@
+﻿train: C:/Users/Mandi/yolo_hotdog_classifier/datasets/train
+val: C:/Users/Mandi/yolo_hotdog_classifier/datasets/train
+test: C:/Users/Mandi/yolo_hotdog_classifier/datasets/train
+
+nc: 2
+names: ['hot_dog', 'not_hot_dog']
