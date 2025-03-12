@@ -146,12 +146,12 @@ yolo_hotdog_classifier/
 ## Usage
 
 1. Install requirements:
-   `ash
+   `Bash
    pip install ultralytics
    `
 
 2. Train the model:
-   `ash
+   `Bash
    python train.py
    `
 
